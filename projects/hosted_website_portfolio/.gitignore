@@ -1,0 +1,16 @@
+# Secrets
+*.env
+*token*
+acme.json
+acme.txt
+
+# Private configs
+*.pem
+*.key
+
+# System paths
+/home/andrew/
+
+# Logs
+logs/
+*.log

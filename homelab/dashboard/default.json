@@ -1,0 +1,1123 @@
+{
+  "schemaVersion": 1,
+  "configProperties": {
+    "name": "default"
+  },
+  "categories": [],
+  "wrappers": [
+    {
+      "id": "default",
+      "position": 0
+    }
+  ],
+  "apps": [
+    {
+      "id": "app-id",
+      "name": "Sonarr",
+      "url": "http://example.local",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/sonarr.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "202",
+          "204",
+          "400",
+          "401",
+          "403",
+          "404",
+          "405",
+          "408",
+          "410",
+          "429"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "http://example.local",
+        "tooltipDescription": "Get them shows"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 3
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "sonarr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": null,
+            "isDefined": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "app-id",
+      "name": "Prowlarr",
+      "url": "http://example.local",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/prowlarr.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "202",
+          "204",
+          "400",
+          "403",
+          "401",
+          "404",
+          "405",
+          "408",
+          "410",
+          "429"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "http://example.local",
+        "tooltipDescription": "Prowl"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 1,
+            "y": 3
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "prowlarr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": null,
+            "isDefined": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "app-id",
+      "name": "Sabnzbd",
+      "url": "http://example.local",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/sabnzbd-alt.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "http://example.local",
+        "tooltipDescription": "port"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 1,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 4
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "sabnzbd",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": null,
+            "isDefined": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "app-id",
+      "name": "Plex",
+      "url": "http://example.local",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/plex.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "http://example.local",
+        "tooltipDescription": "Watch"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 3
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 1,
+            "y": 4
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "app-id",
+      "name": "Proxmox",
+      "url": "http://example.local",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/proxmox.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "408",
+          "405",
+          "404",
+          "403",
+          "401",
+          "429",
+          "410",
+          "400",
+          "204",
+          "202"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "http://example.local",
+        "tooltipDescription": "port"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 1,
+            "y": 4
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "overseerr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": null,
+            "isDefined": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "app-id",
+      "name": "Bazarr",
+      "url": "http://example.local",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/bazarr.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "http://example.local",
+        "tooltipDescription": "subittles"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 1,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "app-id",
+      "name": "Portainer",
+      "url": "http://example.local",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/portainer.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "http://example.local",
+        "tooltipDescription": "port"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 3
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 4
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "app-id",
+      "name": "ChatGPT",
+      "url": "http://example.local",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/chatgpt.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "202",
+          "204",
+          "400",
+          "401",
+          "403",
+          "404",
+          "405",
+          "408",
+          "410"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "http://example.local",
+        "tooltipDescription": "chat"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 4
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 3
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 1,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "overseerr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": null,
+            "isDefined": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "app-id",
+      "name": "Radarr",
+      "url": "http://example.local",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/radarr.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "202",
+          "204",
+          "400",
+          "401",
+          "403",
+          "404",
+          "405",
+          "408",
+          "410",
+          "429"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "http://example.local",
+        "tooltipDescription": "Get them movies"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 5
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "radarr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": null,
+            "isDefined": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "app-id",
+      "name": "Overseerr",
+      "url": "http://example.local",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/overseerr.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "http://example.local",
+        "tooltipDescription": "port"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 1,
+            "y": 3
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 1,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "overseerr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": null,
+            "isDefined": true
+          }
+        ]
+      }
+    }
+  ],
+  "widgets": [
+    {
+      "id": "widget-id",
+      "type": "date",
+      "properties": {
+        "timezone": "America/Chicago",
+        "customTitle": "Chicago",
+        "display24HourFormat": false,
+        "dateFormat": "dddd, MMMM D",
+        "titleState": "both"
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "widget-id",
+      "type": "weather",
+      "properties": {
+        "displayInFahrenheit": true,
+        "displayCityName": true,
+        "displayWeekly": true,
+        "forecastDays": 5,
+        "location": {
+          "name": "City",
+          "latitude": 0.0,
+          "longitude": 0.0
+        }
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 4,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 7,
+            "height": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "widget-id",
+      "type": "media-requests-list",
+      "properties": {
+        "replaceLinksWithExternalHost": true,
+        "openInNewTab": true
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 3,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 4
+          },
+          "size": {
+            "width": 3,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 3,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "widget-id",
+      "type": "bookmark",
+      "properties": {
+        "name": "Bookmarks",
+        "items": [
+          {
+            "id": "60fb35de-2930-412d-aaf6-769849e053cb",
+            "name": "Trash Guides",
+            "href": "https://trash-guides.info/",
+            "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/trash-guides.png",
+            "openNewTab": true,
+            "hideHostname": true,
+            "hideIcon": false
+          },
+          {
+            "id": "6a42c326-8143-4304-a038-8ad07acabb01",
+            "name": "Cloudflare",
+            "href": "https://dash.cloudflare.com/e297a2bc8f7c5763bffc3f28f73a4d6e",
+            "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/cloudflare.svg",
+            "openNewTab": true,
+            "hideHostname": true,
+            "hideIcon": false
+          },
+          {
+            "id": "477a1606-60a7-4eff-a55a-32d919f96394",
+            "name": "VPN",
+            "href": "https://www.privateinternetaccess.com/offer/best?coupon=official-site&utm_campaign=18175889686&utm_adgroup=143585537187&keyword=private%20internet%20access%20vpn&ms=gb&gad_source=1&gclid=CjwKCAjw65-zBhBkEiwAjrqRMJF3dwnHr4jNn_Dek3Yboh8iWHpEQxRyFWZokNSiA9BryKaOkRQ4UBoCCIcQAvD_BwE",
+            "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/private-internet-access.svg",
+            "openNewTab": true,
+            "hideHostname": true,
+            "hideIcon": false
+          },
+          {
+            "id": "1afd361e-21b3-4719-b944-20ba55043fdf",
+            "name": "DePaul Classes",
+            "href": "https://login.microsoftonline.com/750d3a3f-1f46-4da2-8a64-7605e75ea2f9/saml2?SAMLRequest=jdHPS8MwFAfwu%2bD%2fUHJvkqZp6kI7GHoZzMumHrxIlr5uhTapean455s5RI%2fe3g%2b%2b8OG9ZrPEs9vD%2bwIYs%2b1DS9BMY7j2b6rituylNP2dkKJXplZW1pKvqrJTHGqSvUDAwbuWCMpJtkVcYOswGhfTiAuZFyIv%2bVNRaq50VdBCCZnGryTbIEKIKXvvHS4ThAOEj8HC837XknOMM2rGOjHSDmazjBS65dKycWYmmdnoT4NjF%2b3uUtG0I9nnNDpsyRKc9gYH1M5MgDpafdg87nRC6jn46K0fyfr2Jsuab3L4T9D8gMn6h2fKFfDeQL6yUuRScpMfpSjyolC8E31ddQpoBJfOgfQYhtM54mwsUOunX3rDrogEatjff6y%2fAA%3d%3d&RelayState=%2fd2l%2fhome",
+            "iconUrl": "https://unpkg.com/@tabler/icons-png@2.0.0-beta/icons/school.png",
+            "openNewTab": true,
+            "hideHostname": true,
+            "hideIcon": false
+          },
+          {
+            "id": "abaa48d3-5564-4fcf-8c35-bd6ea684dd2b",
+            "name": "Youtube",
+            "href": "https://www.youtube.com/",
+            "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/youtube.svg",
+            "openNewTab": true,
+            "hideHostname": true,
+            "hideIcon": false
+          },
+          {
+            "id": "e4005347-37e9-4f7c-a6f8-b1fe3b8a7bba",
+            "name": "DockerHub.io",
+            "href": "https://hub.docker.com/search?q=",
+            "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/docker-moby.svg",
+            "openNewTab": true,
+            "hideHostname": true,
+            "hideIcon": false
+          }
+        ],
+        "layout": "vertical"
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 3
+          }
+        },
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 4
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "widget-id",
+      "type": "dlspeed",
+      "properties": {},
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    }
+  ],
+  "settings": {
+    "common": {
+      "searchEngine": {
+        "type": "google",
+        "properties": {}
+      }
+    },
+    "customization": {
+      "layout": {
+        "enabledLeftSidebar": true,
+        "enabledRightSidebar": false,
+        "enabledDocker": false,
+        "enabledPing": true,
+        "enabledSearchbar": true
+      },
+      "pageTitle": "Homarr \u2b50\ufe0f",
+      "logoImageUrl": "/imgs/logo/logo.png",
+      "faviconUrl": "/imgs/favicon/favicon-squared.png",
+      "backgroundImageUrl": "",
+      "customCss": "/* Remove logo at the top left */\n.dashboard-header-logo-image {\ndisplay: none\n}\n/* Blur categories and applications (change \"10px\" to your liking) */\n.dashboard-gs-generic-item, .dashboard-gs-category {\nbackground-color: rgba(0,0,0,0.5);\nbackdrop-filter: blur(10px);\n}\n/* Blur Navigation Panel (change \"10px\" to your liking) and add a transparent bottom outline */\n.mantine-1h4f8n {\nborder: 0.0625rem solid rgb(217, 72, 15,0);\nborder-bottom: 0.0625rem solid rgb(217, 72, 15,0.25);\nbackground-color: rgba(0,0,0,0.2);\nbackdrop-filter: blur(10px);\n}\n/* Blur the background image */\n.mantine-AppShell-body {\nbackdrop-filter: blur(10px);\n}\n/* Remove outline from categories */\n.mantine-1ylzici[data-active] {\nborder: 0.0625rem solid rgba(37, 38, 43,0);\n}\n/* Remove the outline from widgets */\n.mantine-14m2mri[data-with-border], .mantine-ubz967[data-with-border], .mantine-1eab5ax[data-with-border] {\nborder: 0.0625rem solid rgb(55, 58, 64,0);\n}\n/* Make outline of rss feed transparent and orange */\n.mantine-qd40rq[data-with-border] {\nborder: 0.0625rem solid rgb(217, 72, 15,0.25);\n}",
+      "colors": {
+        "primary": "red",
+        "secondary": "yellow",
+        "shade": 7
+      },
+      "appOpacity": 100,
+      "gridstack": {
+        "columnCountSmall": 3,
+        "columnCountMedium": 6,
+        "columnCountLarge": 10
+      },
+      "backgroundImageAttachment": "fixed",
+      "backgroundImageRepeat": "no-repeat",
+      "backgroundImageSize": "cover",
+      "metaTitle": ""
+    },
+    "access": {
+      "allowGuests": false
+    }
+  }
+}

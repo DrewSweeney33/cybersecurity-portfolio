@@ -1,0 +1,3 @@
+🧪 Lab 01 – Exploring the Seven Domains of a Typical IT Infrastructure
+
+This lab focused on understanding and analyzing the seven key domains of a standard IT infrastructure: User, Workstation, LAN, LAN-to-WAN, WAN, Remote Access, and System/Application. Using virtualized environments, I performed network and user access simulations, explored firewall rules, domain configurations, NAT settings, and applied critical security controls to each domain. The challenge analysis involved recommending domain-specific security enhancements such as segmentation, EDR, VPN with MFA, and application whitelisting.

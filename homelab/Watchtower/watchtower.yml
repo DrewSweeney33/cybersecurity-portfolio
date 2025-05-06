@@ -1,0 +1,15 @@
+services:
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_INTERVAL=30
+    networks:
+      - docker_network
+
+networks:
+  docker_network:
+    external: true  # Redacted external network reference

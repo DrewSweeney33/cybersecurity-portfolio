@@ -1,0 +1,17 @@
+services:
+  unbound:
+    container_name: unbound
+    image: mvance/unbound:latest  # Or another Unbound Docker image
+    networks:
+      docker_network:
+        ipv4_address: 192.168.X.X  # Redacted Static IP
+    ports:
+      - "53:53/tcp"  # Unbound listening on port 53
+      - "53:53/udp"
+    volumes:
+      - /redacted/path/unbound/unbound.conf:/config/unbound.conf  # Redacted host path
+    restart: unless-stopped
+
+networks:
+  docker_network:
+    external: true

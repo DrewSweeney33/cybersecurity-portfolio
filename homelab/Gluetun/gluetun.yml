@@ -1,0 +1,38 @@
+services:
+  gluetun:
+    image: qmcgaw/gluetun
+    container_name: gluetun
+    restart: unless-stopped
+    networks:
+      docker_network:
+        ipv4_address: 192.168.X.X  # Redacted IP
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    ports:
+      - 8888:8888/tcp   # HTTP proxy
+      - 8388:8388/tcp   # Shadowsocks
+      - 8388:8388/udp   # Shadowsocks
+      - 7878:7878       # Radarr
+      - 8989:8989       # Sonarr
+      - 9696:9696       # Prowlarr
+      - 8080:8080       # SABnzbd
+      - 6767:6767       # Bazarr
+      - 5055:5055       # Overseerr
+      - 8081:8081       # qBittorrent
+    volumes:
+      - /redacted/path/gluetun/data:/gluetun
+    environment:
+      - VPN_SERVICE_PROVIDER=REDACTED_PROVIDER
+      - VPN_TYPE=openvpn
+      - OPENVPN_USER=REDACTED_USERNAME
+      - OPENVPN_PASSWORD=REDACTED_PASSWORD
+      - TZ=America/Chicago
+      - UPDATER_PERIOD=24h
+
+networks:
+  docker_network:
+    external: true

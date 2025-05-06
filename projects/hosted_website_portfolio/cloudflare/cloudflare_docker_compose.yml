@@ -1,0 +1,16 @@
+services:
+  cloudflaretunnel:
+    container_name: cloudflaretunnel
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    env_file:
+      - .env
+    networks:
+      - proxy
+    environment:
+      - TUNNEL_TOKEN=$TUNNEL_TOKEN
+    command: tunnel --no-autoupdate run
+
+networks:
+  proxy:
+    external: true

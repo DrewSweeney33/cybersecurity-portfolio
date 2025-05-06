@@ -1,0 +1,30 @@
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /redacted/path/prowlarr/data:/config
+    restart: unless-stopped
+    network_mode: "container:gluetun"  # Share network namespace with Gluetun container
+    labels:
+      - "traefik.enable=true"
+      
+      # HTTP Router (Redirect to HTTPS)
+      - "traefik.http.routers.prowlarr.entrypoints=http"
+      - "traefik.http.routers.prowlarr.rule=Host(`REDACTED_DOMAIN`)"
+      - "traefik.http.middlewares.prowlarr-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.prowlarr.middlewares=prowlarr-https-redirect"
+
+      # HTTPS Router (Secure Access)
+      - "traefik.http.routers.prowlarr-secure.entrypoints=https"
+      - "traefik.http.routers.prowlarr-secure.rule=Host(`REDACTED_DOMAIN`)"
+      - "traefik.http.routers.prowlarr-secure.tls=true"
+      - "traefik.http.routers.prowlarr-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.prowlarr-secure.service=prowlarr"
+
+      # Define Service & Port
+      - "traefik.http.services.prowlarr.loadbalancer.server.port=9696"

@@ -1,0 +1,30 @@
+services:
+  overseerr:
+    image: lscr.io/linuxserver/overseerr:latest
+    container_name: overseerr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /redacted/path/overseerr/data:/config
+    restart: unless-stopped
+    network_mode: "container:gluetun"  # Shares network with VPN container
+    labels:
+      - "traefik.enable=true"
+
+      # HTTP Router (Redirect to HTTPS)
+      - "traefik.http.routers.overseerr.entrypoints=http"
+      - "traefik.http.routers.overseerr.rule=Host(`REDACTED_DOMAIN`)"
+      - "traefik.http.middlewares.overseerr-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.overseerr.middlewares=overseerr-https-redirect"
+
+      # HTTPS Router (Secure Access)
+      - "traefik.http.routers.overseerr-secure.entrypoints=https"
+      - "traefik.http.routers.overseerr-secure.rule=Host(`REDACTED_DOMAIN`)"
+      - "traefik.http.routers.overseerr-secure.tls=true"
+      - "traefik.http.routers.overseerr-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.overseerr-secure.service=overseerr"
+
+      # Define Service & Port
+      - "traefik.http.services.overseerr.loadbalancer.server.port=5055"

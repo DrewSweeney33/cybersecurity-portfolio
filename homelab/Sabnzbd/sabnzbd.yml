@@ -1,0 +1,32 @@
+services:
+  sabnzbd:
+    image: lscr.io/linuxserver/sabnzbd:latest
+    container_name: sabnzbd
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /redacted/path/sabnzbd/config:/config
+      - /mnt/redacted/downloads:/downloads   # optional
+      - /mnt/redacted/incomplete:/incomplete # optional
+    restart: always
+    network_mode: "container:gluetun"  # Share network namespace with Gluetun container
+    labels:
+      - "traefik.enable=true"
+      
+      # HTTP Router (Redirect to HTTPS)
+      - "traefik.http.routers.sabnzbd.entrypoints=http"
+      - "traefik.http.routers.sabnzbd.rule=Host(`REDACTED_DOMAIN`)"
+      - "traefik.http.middlewares.sabnzbd-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.sabnzbd.middlewares=sabnzbd-https-redirect"
+
+      # HTTPS Router (Secure Access)
+      - "traefik.http.routers.sabnzbd-secure.entrypoints=https"
+      - "traefik.http.routers.sabnzbd-secure.rule=Host(`REDACTED_DOMAIN`)"
+      - "traefik.http.routers.sabnzbd-secure.tls=true"
+      - "traefik.http.routers.sabnzbd-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.sabnzbd-secure.service=sabnzbd"
+
+      # Define Service & Port
+      - "traefik.http.services.sabnzbd.loadbalancer.server.port=8080"

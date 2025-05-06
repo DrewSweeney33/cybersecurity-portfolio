@@ -1,0 +1,28 @@
+redacted_config_yaml = """\
+http:
+  middlewares:
+    default-security-headers:
+      headers:
+        customBrowserXSSValue: 0
+        contentTypeNosniff: true
+        forceSTSHeader: true
+        frameDeny: false
+        referrerPolicy: "strict-origin-when-cross-origin"
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 31536000
+        contentSecurityPolicy: "default-src 'self'"
+
+    https-redirectscheme:
+      redirectScheme:
+        scheme: https
+        permanent: true
+
+  routers:
+    default:
+      entryPoints: https
+      rule: "HostRegexp(`{host:.+}`)"
+      service: traefik@docker
+      middlewares:
+        - default-security-headers
+"""

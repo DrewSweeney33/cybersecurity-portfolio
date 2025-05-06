@@ -1,0 +1,41 @@
+services:
+  homarr:
+    image: ghcr.io/ajnart/homarr:latest
+    container_name: homarr
+    networks:
+      docker_network:
+        ipv4_address: 192.168.X.X # Redacted Static IP
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /redacted/path/homarr/data:/data
+      - /redacted/path/homarr/configs:/app/data/configs
+      - /redacted/path/homarr/icons:/app/public/icons
+    ports:
+      - 7575:7575 # Homarr web UI port
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+
+      # HTTP Router (Redirect to HTTPS)
+      - "traefik.http.routers.homarr.entrypoints=http"
+      - "traefik.http.routers.homarr.rule=Host(`REDACTED.DOMAIN.com`)"
+      - "traefik.http.middlewares.homarr-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.homarr.middlewares=homarr-https-redirect"
+
+      # HTTPS Router (Secure Access)
+      - "traefik.http.routers.homarr-secure.entrypoints=https"
+      - "traefik.http.routers.homarr-secure.rule=Host(`REDACTED.DOMAIN.com`)"
+      - "traefik.http.routers.homarr-secure.tls=true"
+      - "traefik.http.routers.homarr-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.homarr-secure.service=homarr"
+
+      # Define Service & Port
+      - "traefik.http.services.homarr.loadbalancer.server.port=7575"
+
+networks:
+  docker_network:
+    external: true

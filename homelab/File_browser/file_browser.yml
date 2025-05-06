@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  filebrowser:
+    image: filebrowser/filebrowser
+    container_name: file_browser
+    restart: unless-stopped
+    volumes:
+      - /redacted/root:/srv  # Redacted directory path
+    environment:
+      - PUID=1000
+      - PGID=1000
+    security_opt:
+      - no-new-privileges:true
+    cap_add:
+      - SYS_ADMIN
+      - DAC_READ_SEARCH
+    ports:
+      - "8082:80"
+    networks:
+       docker_network:
+         ipv4_address: 192.168.X.X  # Redacted static IP
+
+    labels:
+      - "traefik.enable=true"
+
+      # HTTP Router (Redirect to HTTPS)
+      - "traefik.http.routers.file_browser.entrypoints=http"
+      - "traefik.http.routers.file_browser.rule=Host(`REDACTED_SUBDOMAIN.REDACTED_DOMAIN`)"
+      - "traefik.http.middlewares.file_browser-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.file_browser.middlewares=file_browser-https-redirect"
+
+      # HTTPS Router (Secure Access)
+      - "traefik.http.routers.file_browser-secure.entrypoints=https"
+      - "traefik.http.routers.file_browser-secure.rule=Host(`REDACTED_SUBDOMAIN.REDACTED_DOMAIN`)"
+      - "traefik.http.routers.file_browser-secure.tls=true"
+      - "traefik.http.routers.file_browser-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.file_browser-secure.service=file_browser"
+
+      # Define Service & Port
+      - "traefik.http.services.file_browser.loadbalancer.server.port=80"
+
+networks:
+  docker_network:
+    external: true

@@ -1,0 +1,45 @@
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    networks:
+      docker_network:
+        ipv4_address: 192.168.X.X  # Redacted Static Address
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "80:80/tcp"
+    environment:
+      TZ: 'America/Chicago'
+      WEBPASSWORD: 'REDACTED_PASSWORD'
+      DNS1: "192.168.X.X#53"  # Redacted unbound resolver IP
+    volumes:
+      - /redacted/path/pihole/data:/etc/pihole
+      - /redacted/path/pihole/dnsmasq.d:/etc/dnsmasq.d
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+
+      # HTTP Router (Redirect to HTTPS)
+      - "traefik.http.routers.pihole.entrypoints=http"
+      - "traefik.http.routers.pihole.rule=Host(`REDACTED_DOMAIN`)"
+      - "traefik.http.middlewares.pihole-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.pihole.middlewares=pihole-https-redirect"
+
+      # HTTPS Router (Secure Access)
+      - "traefik.http.routers.pihole-secure.entrypoints=https"
+      - "traefik.http.routers.pihole-secure.rule=Host(`REDACTED_DOMAIN`)"
+      - "traefik.http.routers.pihole-secure.tls=true"
+      - "traefik.http.routers.pihole-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.pihole-secure.service=pihole"
+
+      # Define Service & Port (Instead of Hardcoding an IP)
+      - "traefik.http.services.pihole.loadbalancer.server.port=80"
+
+      # Fix /admin/ Path Redirection
+      - "traefik.http.middlewares.pihole-strip-prefix.stripprefix.prefixes=/admin"
+      - "traefik.http.routers.pihole-secure.middlewares=pihole-strip-prefix"
+
+networks:
+  docker_network:
+    external: true

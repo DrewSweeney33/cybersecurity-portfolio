@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SweenTech | Andrew Sweeney's Website | Blog | Portfolio</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Explore cybersecurity, cloud security, and homelab infrastructure projects by Andrew Sweeney.">
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="styles.css" />
+  
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="assets/Logo.jpg" alt="Logo" >
+        <span>SweenTech</span>
+      </div>
+      <ul class="menu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#project">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+<button id="darkModeToggle" class="toggle-btn" title="Toggle Theme">Dark Mode</button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero fade-in" id="hero">
+    <h1>Welcome to SweenTech</h1>
+    <p>Documenting my learning journey, personal projects, and showcasing who I am.</p>
+    <a href="#about" class="btn-primary">Learn More</a>
+  </section>
+
+  <!-- About Me -->
+  <section class="about fade-in" id="about">
+    <h2>About Me</h2>
+    <p>Hi, I’m Andrew - an IT professional passionate about cybersecurity, cloud security, and infrastructure. This site is where I document my projects, share insights, and explore the ever-evolving tech landscape.</p>
+    
+    <p>With a background in Computer Science and a focus on Cybersecurity, I enjoy working with networks, cloud solutions, and security frameworks. Whether it's coding, configuring servers, or learning new security methodologies, I'm always up for a challenge.</p>
+    
+    <p>Feel free to explore my work, check out my projects, and connect with me.</p>
+    
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects fade-in" id="project">
+    <h2>My Projects</h2>
+    <p>Here are some of the latest projects and discoveries I've been working on.</p>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>Homarr Dashboard</h3>
+          <img src="assets/Homarr.png" alt="Project image" class="project-thumb" />
+        </div>
+        <p class="project-date">Mar 10, 2024</p>
+        <p>Built a centralized, self-hosted homepage using Homarr to monitor and manage local services and infrastructure. Integrated apps like Radarr, Sonarr, Plex, Proxmox, and Pi-hole for real-time visibility, status tracking, and one-click access to key tools. Custom widgets display weather, network usage, and links to essential resources, all secured behind a reverse proxy.</p>
+        <a href="https://github.com/DrewSweeney33/cybersecurity-portfolio/tree/main/homelab/dashboard" target="_blank" class="project-btn-secondary">See Project Files</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>Plex</h3>
+          <img src="assets/Plex.jpg" alt="Project image" class="project-thumb" />
+        </div>
+        <p class="project-date">March 15, 2024</p>
+        <p>A self-hosted Plex server running in Docker with GPU acceleration and direct access to a large local media library. Configured with automated metadata management and remote streaming capabilities, the system integrates seamlessly with other containers for downloading and organizing media, all secured within a managed home lab environment.</p>
+        <a href="https://github.com/DrewSweeney33/cybersecurity-portfolio/tree/main/homelab/Plex" target="_blank" class="project-btn-secondary">See Project Files</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>Information Security Management Course</h3>
+          <img src="assets/Learning.jpg" alt="Project image" class="project-thumb" />
+        </div>
+        <p class="project-date">Nov 15, 2024</p>
+        <p>A comprehensive course focused on the strategic and operational aspects of securing information systems. Covered risk assessment, security policy development, vulnerability management, and compliance with frameworks like NIST and ISO. Included hands-on labs, academic article reviews, and a final research paper exploring real-world security governance practices.</p>
+        <a href="https://github.com/DrewSweeney33/cybersecurity-portfolio/tree/main/coursework/information_security_management" target="_blank" class="project-btn-secondary">See Course Work</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>Traefik</h3>
+          <img src="assets/Traefik.png" alt="Project image" class="project-thumb" />
+        </div>
+        <p class="project-date">Dec 15, 2024</p>
+        <p>Deployed Traefik as a dynamic reverse proxy for all self-hosted services, with automatic HTTPS via Let's Encrypt using Cloudflare DNS challenge. Configured with Docker labels for secure routing, middleware for security headers and redirects, and basic authentication for dashboard access. This setup enables centralized, encrypted access to containers across the home lab.</p>
+        <a href="https://github.com/DrewSweeney33/cybersecurity-portfolio/tree/main/homelab/Traefik" target="_blank" class="project-btn-secondary">See Project Files</a>
+      </div>
+
+      <!-- Initially hidden projects -->
+      <div class="project-card project-hidden">
+        <div class="project-header">
+          <h3>Radarr</h3>
+          <img src="assets/Movies.jpg" alt="Project image" class="project-thumb" />
+        </div>
+        <p class="project-date">Mar 15, 2024</p>
+        <p>Radarr is deployed in a secure Docker container with traffic routed through a VPN (Gluetun) for privacy. It’s configured to automatically monitor, download, and organize movies into a structured media library. Integrated with other services like Sonarr and Overseerr, and accessed securely via Traefik with HTTPS and domain-based routing.</p>
+        <a href="https://github.com/DrewSweeney33/cybersecurity-portfolio/tree/main/homelab/Radarr" target="_blank" class="project-btn-secondary">See Project Files</a>
+      </div>
+
+      <div class="project-card project-hidden">
+        <div class="project-header">
+          <h3>SweenTech Website</h3>
+          <img src="assets/Logo.jpg" alt="Project image" class="project-thumb" />
+        </div>
+        <p class="project-date">Mar 10, 2025</p>
+        <p>SweenTech.com is my personal portfolio site where I showcase IT projects, cybersecurity labs, and homelab infrastructure. Built using modern web technologies and secured with reverse proxying and containerization, the site reflects my passion for system administration, automation, and secure infrastructure design.</p>
+        <a href="https://github.com/DrewSweeney33/cybersecurity-portfolio/tree/main/projects/hosted_website_portfolio" target="_blank" class="project-btn-secondary">See Project Files</a>
+      </div>
+
+      <div class="project-card project-hidden">
+        <div class="project-header">
+          <h3>Pi-Hole</h3>
+          <img src="assets/Pi.png" alt="Project image" class="project-thumb" />
+        </div>
+        <p class="project-date">Feb 15, 2024</p>
+        <p>Configured Pi-hole in Docker with a static IP for reliable network-wide ad and tracker blocking. It uses Unbound as a local recursive DNS resolver for enhanced privacy and speed. The setup is secured with TLS via Traefik, and integrates into the custom Docker network for seamless communication with other self-hosted services.</p>
+        <a href="https://github.com/DrewSweeney33/cybersecurity-portfolio/tree/main/homelab/Pi-Hole" target="_blank" class="project-btn-secondary">See Project Files</a>
+      </div>
+
+      <div class="project-card project-hidden">
+        <div class="project-header">
+          <h3>Unbound DNS Resolver</h3>
+          <img src="assets/DNS.png" alt="Project image" class="project-thumb" />
+        </div>
+        <p class="project-date">Feb 15, 2024</p>
+        <p>Deployed Unbound in Docker as a secure, recursive DNS resolver integrated with Pi-hole. Configured with a static IP in the Docker network, it provides encrypted, privacy-focused DNS resolution without relying on third-party providers. Serves as the upstream resolver for Pi-hole, improving both speed and control over DNS queries.</p>
+        <a href="https://github.com/DrewSweeney33/cybersecurity-portfolio/tree/main/homelab/Unbound" target="_blank" class="project-btn-secondary">See Project Files</a>
+      </div>
+    </div>
+
+    <button id="loadMoreBtn" class="project-btn-load-more">See More</button>
+    <button id="loadLessBtn" class="project-btn-load-less project-hidden">See Less</button>
+  </section>
+
+  
+
+<!-- Skills Section -->
+<section class="skills fade-in" id="skills">
+    <h2>My Core Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-card" data-skill="90">
+            <h3>Linux / Bash</h3>
+            <div class="skill-bar"><span></span></div>
+        </div>
+        <div class="skill-card" data-skill="85">
+            <h3>Docker &amp; Containers</h3>
+            <div class="skill-bar"><span></span></div>
+        </div>
+        <div class="skill-card" data-skill="80">
+            <h3>Proxmox / Virtualization</h3>
+            <div class="skill-bar"><span></span></div>
+        </div>
+        <div class="skill-card" data-skill="75">
+            <h3>Cloud Security (Azure)</h3>
+            <div class="skill-bar"><span></span></div>
+        </div>
+        <div class="skill-card" data-skill="70">
+            <h3>Python Automation</h3>
+            <div class="skill-bar"><span></span></div>
+        </div>
+        <div class="skill-card" data-skill="65">
+            <h3>Networking &amp; Firewalls</h3>
+            <div class="skill-bar"><span></span></div>
+        </div>
+    </div>
+</section>
+
+
+  
+  <!-- Contact Section -->
+  <section class="contact fade-in" id="contact">
+      <h2>Get in Touch</h2>
+      <p>I love connecting with fellow tech enthusiasts - feel free to reach out!</p>
+      <div class="contact-links">
+          <a href="mailto:drewsweeney3@gmail.com" class="contact-item email" target="_blank">
+              <span>Email</span>
+          </a>
+          <a href="https://github.com/DrewSweeney33" class="contact-item github" target="_blank">
+              <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/drewsweeney3/" class="contact-item linkedin" target="_blank">
+              <span>LinkedIn</span>
+          </a>
+      </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 SweenTech. All rights reserved.
+  </footer>
+
+    <!-- Link JavaScript file -->
+    <script src="script.js"></script>
+
+<button id="scrollToTop" title="Back to top">↑</button>
+
+</body>
+</html>

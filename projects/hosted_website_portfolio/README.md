@@ -1,0 +1,3 @@
+## 🌐 Personal Website Portfolio
+
+This is the source and infrastructure for my self-hosted portfolio website, which showcases my professional background, technical projects, and cybersecurity work. The site is deployed in a Proxmox LXC container using Docker, reverse-proxied through NGINX and Traefik, and securely exposed to the web using a Cloudflare Tunnel. Every layer of the stack—from containerization to external access—is configured with security, performance, and maintainability in mind. This setup allows me to control the full deployment pipeline while applying real-world DevSecOps practices in a homelab environment.

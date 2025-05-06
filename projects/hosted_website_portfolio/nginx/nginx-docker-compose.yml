@@ -1,0 +1,35 @@
+redacted_nginx_docker_compose = """\
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./html:/usr/share/nginx/html:ro
+      - ./logs:/var/log/nginx
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+
+      # HTTP Router (Redirect to HTTPS)
+      - "traefik.http.routers.nginx.entrypoints=http"
+      - "traefik.http.routers.nginx.rule=Host(`example.com`)"
+      - "traefik.http.middlewares.nginx-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.nginx.middlewares=nginx-https-redirect"
+
+      # HTTPS Router (Secure Access)
+      - "traefik.http.routers.nginx-secure.entrypoints=https"
+      - "traefik.http.routers.nginx-secure.rule=Host(`example.com`)"
+      - "traefik.http.routers.nginx-secure.tls=true"
+      - "traefik.http.routers.nginx-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.nginx-secure.service=nginx"
+
+      # Define Service & Port
+      - "traefik.http.services.nginx.loadbalancer.server.port=80"
+
+networks:
+  proxy:
+    external: true
+"""
